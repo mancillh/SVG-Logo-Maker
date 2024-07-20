@@ -1,44 +1,49 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
-const { createShape } = require("./lib/shapes");
+const { Square, Circle, Triangle } = require("./lib/shapes");
 
-inquirer
-  .prompt ([
-    {
-      type: "input",
-      message: "Enter logo text (up to 3 characters).",
-      name: "textContent",
-    }, {
-      type: "input",
-      message: "Enter text color. Use a color keyword or a hexadecimal number.",
-      name: "textColor",
-    },{
-      type: "checkbox",
-      message: "Enter shape.",
-      name: "shape",
-      choices: ['Triangle', 'Circle', 'Square'],
-    }, {
-      type: "input",
-      message: "Enter background color. Use a color keyword or a hexadecimal number.",
-      name: "bgColor",
-    }]).then((answers) => {
-      writeFile(`${answers.textContent}-logo-${answers.textColor}-on-${answers.bgColor}.svg`, content, err => {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log('Generated logo.svg');
-        }
-      });
-    });
 
-const content = `<svg version="1.1"
-     width="300" height="200"
-     xmlns="http://www.w3.org/2000/svg">
+const questions = [
+  {
+    type: "input",
+    message: "Enter logo text (up to 3 characters).",
+    name: "textContent",
+  },
+  {
+    type: "input",
+    message: "Enter text color. Use a color keyword or a hexadecimal number.",
+    name: "textColor",
+  },
+  {
+    type: "list",
+    message: "Enter shape.",
+    name: "shape",
+    choices: ['Triangle', 'Circle', 'Square'],
+  },
+  {
+    type: "input",
+    message: "Enter background color. Use a color keyword or a hexadecimal number.",
+    name: "shapeColor",
+  }]
 
-  <rect width="100%" height="100%" fill=white />
+function init() {
+  inquirer.prompt(questions)
+    .then((answers) => {
+      let userShape;
 
-  <${createShape()} fill=${answers.bgColor} />
+      if (answers.shape === 'Circle') {
+        userShape = new Circle(answers.textColor, answers.shapeColor, answers.textContent);
 
-  <text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.textContent}</text>
+      } else if (answers.shape === 'Square') {
+        userShape = new Square(answers.textColor, answers.shapeColor, answers.textContent);
 
-</svg>`;
+      } else {
+        userShape = new Triangle(answers.textColor, answers.shapeColor, answers.textContent);
+      }
+
+      fs.writeFile('logo.svg', userShape.render(), (err, res) => console.log('shape created'))
+
+    })
+}
+
+init()
