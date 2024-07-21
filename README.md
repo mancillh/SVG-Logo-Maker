@@ -17,9 +17,8 @@
   
   ## Installation
   1.) Clone the repo: git@github.com:mancillh/SVG-Logo-Maker.git
-  2.) In the command line, type npm init -y
-  3.) In the command line, type npm i Inquirer@8.2.4.
-  4.) Answer prompts to generate your own icon!
+  2.) In the command line, type npm i Inquirer@8.2.4.
+  3.) Answer prompts to generate your own icon!
 
   ## Usage
   Walkthrough Video:
@@ -54,15 +53,8 @@
   ## Tests
   JEST was used for testing.
 
-  If you would like to test the code with JEST, in addition to the installation steps mentioned above, install JEST.
-  1.) In the command line, type npm install --save-dev jest
-  2.) Add the following section to your package.json:
-      {
-        "scripts": {
-          "test": "jest"
-        }
-      }
-  3.) In Node terminal, npm test
+  If you would like to test the code with JEST:
+  1.) In the command line, type npm test
 
   ## Questions
   My GitHub username: mancillh 
