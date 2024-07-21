@@ -48,7 +48,7 @@ function init() {
         userShape = new Triangle(answers.textColor, answers.shapeColor, answers.textContent);
       }
 
-      fs.writeFile(`./examples/${answers.textContent}-logo-${answers.textColor}-on-${answers.shapeColor}.svg`, userShape.render(), (err, res) => console.log('shape created'))
+      fs.writeFile(`./examples/${answers.textContent}-logo-${answers.textColor}-on-${answers.shapeColor}.svg`, userShape.render(), (err, res) => console.log('Generated logo.svg'))
 
     })
 }
