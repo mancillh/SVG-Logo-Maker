@@ -21,7 +21,7 @@
   3.) Answer prompts to generate your own icon!
 
   ## Usage
-  Walkthrough Video:
+  Walkthrough Video: https://drive.google.com/file/d/1fBjpTPSj2P7rcqSmluMH936vEsqXX0W1/view?usp=drive_link
 
   Example Icons:
 
