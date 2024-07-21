@@ -25,11 +25,17 @@
   Walkthrough Video:
 
   Example Icons:
+
   ![Circle Example 1](examples/HM-logo-purple-on-lavender.svg)
-  ![Circle Example 2](examples/KE-logo-#FF00FF-on-#330033.svg)
+
+  ![Circle Example 2](examples/lt-purp-on-dk-purp.svg)
+
   ![Triangle Example 1](examples/ME-logo-green-on-yellow.svg)
+
   ![Triangle Example 2](examples/MM-logo-black-on-gray.svg)
-  ![Square Example 1](examples/RM-logo-blue-on-#ADD8E6.svg)
+
+  ![Square Example 1](examples/RM-logo-blue-on-lightblue.svg)
+
   ![Square Example 2](examples/VL-logo-black-on-red.svg)
 
   ## Credits
